@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Spring Framework Demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+</head>
+<body>
+<div th:replace="/header :: header" />
+<h1>Author List</h1>
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">First name</th>
+        <th scope="col">Last name</th>
+    </tr>
+    <body>
+    <tr th:each="author: ${authors}">
+        <td th:text="${author.id}">123</td>
+        <td th:text="${author.firstName}">Joe</td>
+        <td th:text="${author.lastName}">Smith</td>
+    </tr>
+    </body>
+    </thead>
+</table>
+</body>
+</html>
